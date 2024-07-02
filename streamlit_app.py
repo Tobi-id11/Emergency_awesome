@@ -32,7 +32,7 @@ st.write("### Raw Data")
 st.dataframe(data)
 
 # Convert Published_date to datetime
-data['Published_date'] = pd.to_datetime(data['Published_date'])
+data['published_date'] = pd.to_datetime(data['published_date'])
 
 # Set up the matplotlib figure
 sns.set(style="whitegrid")
