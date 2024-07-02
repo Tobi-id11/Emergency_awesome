@@ -84,6 +84,6 @@ ax = sns.lineplot(x='published_date', y='views', data=data)
 ax.set_title('Views Over Time')
 plt.xticks(rotation=45)
 st.pyplot(plt)
-    plt.clf()
+plt.clf()
 
 
