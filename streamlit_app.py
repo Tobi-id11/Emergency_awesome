@@ -3,6 +3,8 @@ import pandas as pd
 import psycopg2 as psql
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pandas_profiling import ProfileReport
+from streamlit_pandas_profiling import st_profile_report
 
 # Function to connect to the PostgreSQL database and fetch data
 def get_data_from_db(query):
@@ -27,63 +29,72 @@ st.write("Emergency Awesome is a Youtube Content creator who focuses on movies a
 query = "SELECT * FROM student.tobi_df_capstone"
 data = get_data_from_db(query)
 
-# Display raw data
-st.write("### Playlist")
-st.write("This is the full playlist of Emergency awesome Youtube channel.")
-st.dataframe(data)
+#Page Selection
+page = st.sidebar.selectbox("Select Page", ["Playlist", "Pandas Profiling"])
+    if page == "Playlist":
+    # Display Playlist Page
+    st.write("### Playlist")
+    st.write("This is the full playlist of Emergency awesome Youtube channel.")
+    st.dataframe(data)
 
-# Convert Published_date to datetime
-data['published_date'] = pd.to_datetime(data['published_date'])
+    # Convert Published_date to datetime
+    data['published_date'] = pd.to_datetime(data['published_date'])
 
-# Set up the matplotlib figure
-sns.set(style="whitegrid")
+    # Set up the matplotlib figure
+    sns.set(style="whitegrid")
 
-# Top 10 most viewed videos
-st.write("### Top 10 Most Viewed Videos")
-top_10_viewed = data.nlargest(10, 'views')
-plt.figure(figsize=(12, 6), dpi=100)
-ax = sns.barplot(x='views', y='title', data=top_10_viewed, palette='viridis')
-ax.set_title('Top 10 Most Viewed Videos')
-st.pyplot(plt)
-plt.clf()
+    # Top 10 most viewed videos
+    st.write("### Top 10 Most Viewed Videos")
+    top_10_viewed = data.nlargest(10, 'views')
+    plt.figure(figsize=(12, 6), dpi=100)
+    ax = sns.barplot(x='views', y='title', data=top_10_viewed, palette='viridis')
+    ax.set_title('Top 10 Most Viewed Videos')
+    st.pyplot(plt)
+    plt.clf()
 
-# Top 10 most liked videos
-st.write("### Top 10 Most Liked Videos")
-top_10_liked = data.nlargest(10, 'likes')
-plt.figure(figsize=(12, 6), dpi=100)
-ax = sns.barplot(x='likes', y='title', data=top_10_liked, palette='magma')
-ax.set_title('Top 10 Most Liked Videos')
-st.pyplot(plt)
-plt.clf()
+    # Top 10 most liked videos
+    st.write("### Top 10 Most Liked Videos")
+    top_10_liked = data.nlargest(10, 'likes')
+    plt.figure(figsize=(12, 6), dpi=100)
+    ax = sns.barplot(x='likes', y='title', data=top_10_liked, palette='magma')
+    ax.set_title('Top 10 Most Liked Videos')
+    st.pyplot(plt)
+    plt.clf()
 
-# Top 10 videos with most comments
-st.write("### Top 10 Videos with Most Comments")
-top_10_comments = data.nlargest(10, 'comments')
-plt.figure(figsize=(12, 6), dpi=100)
-ax = sns.barplot(x='comments', y='title', data=top_10_comments, palette='coolwarm')
-ax.set_title('Top 10 Videos with Most Comments')
-st.pyplot(plt)
-plt.clf()
+    # Top 10 videos with most comments
+    st.write("### Top 10 Videos with Most Comments")
+    top_10_comments = data.nlargest(10, 'comments')
+    plt.figure(figsize=(12, 6), dpi=100)
+    ax = sns.barplot(x='comments', y='title', data=top_10_comments, palette='coolwarm')
+    ax.set_title('Top 10 Videos with Most Comments')
+    st.pyplot(plt)
+    plt.clf()
 
-# Latest video
-st.write("### Latest Video")
-latest_video = data.nlargest(1, 'published_date')
-st.dataframe(latest_video)
+    # Latest video
+    st.write("### Latest Video")
+    latest_video = data.nlargest(1, 'published_date')
+    st.dataframe(latest_video)
 
-# Oldest video
-st.write("### Oldest Video")
-oldest_video = data.nsmallest(1, 'published_date')
-st.dataframe(oldest_video)
+    # Oldest video
+    st.write("### Oldest Video")
+    oldest_video = data.nsmallest(1, 'published_date')
+    st.dataframe(oldest_video)
 
-# Trend analysis for views over time
-st.write("### Views Over Time")
-plt.figure(figsize=(12, 6), dpi=100)
-ax = sns.lineplot(x='published_date', y='views', data=data)
-ax.set_title('Views Over Time')
-plt.xticks(rotation=45)
-st.pyplot(plt)
-plt.clf()
+    # Trend analysis for views over time
+    st.write("### Views Over Time")
+    plt.figure(figsize=(12, 6), dpi=100)
+    ax = sns.lineplot(x='published_date', y='views', data=data)
+    ax.set_title('Views Over Time')
+    plt.xticks(rotation=45)
+    st.pyplot(plt)
+    plt.clf()
 
+elif page == "Pandas Profiling":
+    # Generate the profile report
+    profile = ProfileReport(data, title="Emergency Awesome Data Profiling Report", explorative=True)
+
+    # Display the profile report in Streamlit
+    st_profile_report(profile)
 
 
 
