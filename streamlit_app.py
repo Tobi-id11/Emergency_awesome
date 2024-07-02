@@ -29,6 +29,7 @@ data = get_data_from_db(query)
 
 # Display raw data
 st.write("### Playlist")
+st.write("This is the full playlist of Emergency awesome Youtube channel.")
 st.dataframe(data)
 
 # Convert Published_date to datetime
