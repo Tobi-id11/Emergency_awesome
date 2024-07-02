@@ -28,7 +28,7 @@ query = "SELECT * FROM student.tobi_df_capstone"
 data = get_data_from_db(query)
 
 # Display raw data
-st.write("### Raw Data")
+st.write("### Playlist")
 st.dataframe(data)
 
 # Convert Published_date to datetime
