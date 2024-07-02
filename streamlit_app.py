@@ -31,7 +31,7 @@ data = get_data_from_db(query)
 
 #Page Selection
 page = st.sidebar.selectbox("Select Page", ["Playlist", "Pandas Profiling"])
-    if page == "Playlist":
+if page == "Playlist":
     # Display Playlist Page
     st.write("### Playlist")
     st.write("This is the full playlist of Emergency awesome Youtube channel.")
