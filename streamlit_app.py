@@ -39,45 +39,45 @@ sns.set(style="whitegrid")
 
 # Top 10 most viewed videos
 st.write("### Top 10 Most Viewed Videos")
-top_10_viewed = data.nlargest(10, 'Views')
+top_10_viewed = data.nlargest(10, 'views')
 plt.figure(figsize=(12, 6))
-ax = sns.barplot(x='Views', y='Title', data=top_10_viewed, palette='viridis')
+ax = sns.barplot(x='views', y='Title', data=top_10_viewed, palette='viridis')
 ax.set_title('Top 10 Most Viewed Videos')
 st.pyplot(plt)
 plt.clf()
 
 # Top 10 most liked videos
 st.write("### Top 10 Most Liked Videos")
-top_10_liked = data.nlargest(10, 'Likes')
+top_10_liked = data.nlargest(10, 'likes')
 plt.figure(figsize=(12, 6))
-ax = sns.barplot(x='Likes', y='Title', data=top_10_liked, palette='magma')
+ax = sns.barplot(x='likes', y='title', data=top_10_liked, palette='magma')
 ax.set_title('Top 10 Most Liked Videos')
 st.pyplot(plt)
 plt.clf()
 
 # Top 10 videos with most comments
 st.write("### Top 10 Videos with Most Comments")
-top_10_comments = data.nlargest(10, 'Comments')
+top_10_comments = data.nlargest(10, 'comments')
 plt.figure(figsize=(12, 6))
-ax = sns.barplot(x='Comments', y='Title', data=top_10_comments, palette='coolwarm')
+ax = sns.barplot(x='comments', y='title', data=top_10_comments, palette='coolwarm')
 ax.set_title('Top 10 Videos with Most Comments')
 st.pyplot(plt)
 plt.clf()
 
 # Latest video
 st.write("### Latest Video")
-latest_video = data.nlargest(1, 'Published_date')
+latest_video = data.nlargest(1, 'published_date')
 st.dataframe(latest_video)
 
 # Oldest video
 st.write("### Oldest Video")
-oldest_video = data.nsmallest(1, 'Published_date')
+oldest_video = data.nsmallest(1, 'published_date')
 st.dataframe(oldest_video)
 
 # Trend analysis for views over time
 st.write("### Views Over Time")
 plt.figure(figsize=(12, 6))
-ax = sns.lineplot(x='Published_date', y='Views', data=data)
+ax = sns.lineplot(x='published_date', y='views', data=data)
 ax.set_title('Views Over Time')
 plt.xticks(rotation=45)
 st.pyplot(plt)
