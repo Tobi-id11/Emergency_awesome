@@ -2,3 +2,5 @@ streamlit
 psycopg2-binary
 matplotlib
 seaborn
+pandas-profiling[notebook]
+streamlit-pandas-profiling
