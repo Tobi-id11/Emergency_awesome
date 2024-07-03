@@ -1,7 +1,15 @@
-# 📊 Data evaluation template
+# 📊 Emergency Awesome Statistic project
 
-A simple Streamlit app showing how to evaluate and annotate data, using dataframes
-and charts. 
+This project conveys an analysis of the Emergency Awesome YouTube channel. Using the YouTube Data API,PostgreSQL for data storage and Streamlit for querying the data and creating a web page for the users to interact with the data. This project allows users to understand the engagement and performance of the YouTube channel.
+
+## Features
+
+- Retrieve and display YouTube channel statistics (views, likes, comments).
+- Visualize top-performing videos based on views, likes, and comments.
+- Track the growth and trends of video views over time.
+- Interactive interface using Streamlit.
+- Data storage using PostgreSQL being updated by a cron job
+
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://data-evaluation-template.streamlit.app/)
 
