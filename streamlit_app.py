@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-# Function to connect to the PostgreSQL database and fetch data
+# Function to connect to the database and grab the data
 def get_data_from_db(query):
     conn = psql.connect(
         database=st.secrets["database"],
@@ -18,13 +18,13 @@ def get_data_from_db(query):
     conn.close()
     return df
 
-# Streamlit app
+# Page for the Streamlit app
 
 st.title("Emergency Awesome Statistics")
 st.write("This app displays all the information known about Emergency Awesome Youtube Channel.")
 st.write("Emergency Awesome is a Youtube Content creator who focuses on movies and tv show reviews such as Marvel Movies,The Boys, House Of The Dragon Game Of Thrones and many more. ")
 
-# Query to fetch all data
+# Query to retrieve all the data
 query = "SELECT * FROM student.tobi_df_capstone"
 data = get_data_from_db(query)
 
@@ -77,7 +77,7 @@ st.write("### Oldest Video")
 oldest_video = data.nsmallest(1, 'published_date')
 st.dataframe(oldest_video)
 
-# Trend analysis for views over time
+# views over the period of his YouTube channel
 st.write("### Views Over Time")
 plt.figure(figsize=(12, 6), dpi=100)
 ax = sns.lineplot(x='published_date', y='views', data=data)
