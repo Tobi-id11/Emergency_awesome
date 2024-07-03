@@ -63,7 +63,7 @@ plt.clf()
 
 most_liked_video = data.nlargest(1, 'likes')
 most_liked_title = most_liked_video.iloc[0]['title']
-most_video_liked_amount = most_viewed_video.iloc[0]['likes']
+most_video_liked_amount = most_liked_video.iloc[0]['likes']
 st.write(f" The most liked video on the channel is {most_liked_title} with currently {most_video_liked_amount} likes.")
 
 # Top 10 videos with most comments
@@ -77,7 +77,7 @@ plt.clf()
 
 most_commented_video = data.nlargest(1, 'likes')
 most_commented_title = most_commented_video.iloc[0]['title']
-most_video_comment_amount = most_viewed_video.iloc[0]['likes']
+most_video_comment_amount = most_commented_video.iloc[0]['likes']
 st.write(f" The most commented video on the channel is {most_commented_title} with currently {most_video_comment_amount} comments.")
 
 
