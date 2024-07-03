@@ -8,10 +8,10 @@ import seaborn as sns
 # Function to connect to the PostgreSQL database and fetch data
 def get_data_from_db(query):
     conn = psql.connect(
-        database=st.secrets["postgresql"]["database"],
-        user=st.secrets["postgresql"]["user"],
-        host=st.secrets["postgresql"]["host"],
-        password=st.secrets["postgresql"]["password"],
+        database=st.secrets["database"],
+        user=st.secrets["user"],
+        host=st.secrets["host"],
+        password=st.secrets["password"],
         port=5432
     )
     df = pd.read_sql(query, conn)
