@@ -29,8 +29,5 @@ This project conveys an analysis of the Emergency Awesome YouTube channel. Using
 5. **Data Visualization**: Creating visualizations with Seaborn and Matplotlib.
 6. **Application Deployment**: Developing and running the Streamlit app.
 
-
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://data-evaluation-template.streamlit.app/)
-
  Streamlit app hosted online: [YouTube Channel Statistics Dashboard](https://emergencyawesome-iqlqeuvbrj.streamlit.app/)
 
