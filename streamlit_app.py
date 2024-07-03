@@ -50,7 +50,7 @@ plt.clf()
 most_viewed_video = data.nlargest(1, 'views')
 most_viewed_title = most_viewed_video.iloc[0]['title']
 most_video_count = most_viewed_video.iloc[0]['views']
-st.write(f" The most viewed video on the channel is {most_viewed_title} with currently {most_video_count}.")
+st.write(f" The most viewed video on the channel is {most_viewed_title} with currently {most_video_count} views.")
 # Top 10 most liked videos
 st.write("### Top 10 Most Liked Videos")
 top_10_liked = data.nlargest(10, 'likes')
