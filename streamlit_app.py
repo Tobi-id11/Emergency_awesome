@@ -34,8 +34,6 @@ st.write("### Playlist")
 st.write("This is the full playlist of Emergency awesome Youtube channel.")
 st.dataframe(data)
 
-# Convert Published_date to datetime
-data['published_date'] = pd.to_datetime(data['published_date'])
 
 # Set up the matplotlib figure
 sns.set(style="whitegrid")
