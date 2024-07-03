@@ -1,6 +1,6 @@
 # 📊 Emergency Awesome Statistic project
 
-This project conveys an analysis of the Emergency Awesome YouTube channel. Using the YouTube Data API,PostgreSQL for data storage and Streamlit for querying the data and creating a web page for the users to interact with the data. This project allows users to understand the engagement and performance of the YouTube channel.
+This project conveys an analysis of the Emergency Awesome YouTube channel. Using the YouTube Data API, PostgreSQL for data storage and Streamlit for querying the data and creating a web page for the users to interact with the data. This project allows users to understand the engagement and performance of the YouTube channel.
 
 ## Features
 
@@ -10,19 +10,27 @@ This project conveys an analysis of the Emergency Awesome YouTube channel. Using
 - Interactive interface using Streamlit.
 - Data storage using PostgreSQL being updated by a cron job
 
+  ## Methodology
+
+### Tools and Technologies:
+
+- **Python**: Scripting and data manipulation
+- **Streamlit**: Interactive web application
+- **PostgreSQL**: Data storage and querying
+- **Seaborn and Matplotlib**: Data visualization
+- **Google YouTube API**: Accessing YouTube channel data
+
+### Steps Involved:
+
+1. **Environment Setup**: Installing libraries and configuring API access.
+2. **Data Collection**: Using the YouTube API to fetch statistics.
+3. **Data Processing**: Using Pandas for data manipulation. 
+4. **Data Storage**: Storing the data in a PostgreSQL database.
+5. **Data Visualization**: Creating visualizations with Seaborn and Matplotlib.
+6. **Application Deployment**: Developing and running the Streamlit app.
+
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://data-evaluation-template.streamlit.app/)
 
-### How to run it on your own machine
 
-1. Install the requirements
 
-   ```
-   $ pip install -r requirements.txt
-   ```
-
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
