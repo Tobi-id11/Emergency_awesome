@@ -51,6 +51,7 @@ most_viewed_video = data.nlargest(1, 'views')
 most_viewed_title = most_viewed_video.iloc[0]['title']
 most_video_count = most_viewed_video.iloc[0]['views']
 st.write(f" The most viewed video on the channel is {most_viewed_title} with currently {most_video_count} views.")
+
 # Top 10 most liked videos
 st.write("### Top 10 Most Liked Videos")
 top_10_liked = data.nlargest(10, 'likes')
@@ -60,6 +61,11 @@ ax.set_title('Top 10 Most Liked Videos')
 st.pyplot(plt)
 plt.clf()
 
+most_liked_video = data.nlargest(1, 'likes')
+most_liked_title = most_liked_video.iloc[0]['title']
+most_video_liked_amount = most_viewed_video.iloc[0]['likes']
+st.write(f" The most liked video on the channel is {most_liked_title} with currently {most_video_liked_amount} likes.")
+
 # Top 10 videos with most comments
 st.write("### Top 10 Videos with Most Comments")
 top_10_comments = data.nlargest(10, 'comments')
@@ -68,6 +74,12 @@ ax = sns.barplot(x='comments', y='title', data=top_10_comments, palette='coolwar
 ax.set_title('Top 10 Videos with Most Comments')
 st.pyplot(plt)
 plt.clf()
+
+most_commented_video = data.nlargest(1, 'likes')
+most_commented_title = most_commented_video.iloc[0]['title']
+most_video_comment_amount = most_viewed_video.iloc[0]['likes']
+st.write(f" The most commented video on the channel is {most_commented_title} with currently {most_video_comment_amount} comments.")
+
 
 # Latest video
 st.write("### Latest Video")
