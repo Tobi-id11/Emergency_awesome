@@ -21,7 +21,6 @@ def get_data_from_db(query):
 # Page for the Streamlit app
 
 st.title("Emergency Awesome Statistics")
-st.write("This app displays all the information known about Emergency Awesome Youtube Channel.")
 st.write("Emergency Awesome is a Youtube Content creator who focuses on movies and tv show reviews such as Marvel Movies,The Boys, House Of The Dragon Game Of Thrones and many more. ")
 st.write("A well-known YouTuber, Emergency Awesome is renowned for providing insightful evaluations and analysis of films and television series. Charlie Schneider is the channel's owner, and it has a sizable fan base thanks to its intelligent analysis, in-depth dissections, and interesting content." )
 # Query to retrieve all the data
