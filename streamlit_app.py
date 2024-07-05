@@ -22,7 +22,7 @@ def get_data_from_db(query):
 
 st.title("Emergency Awesome Statistics")
 channel_icon_url = "https://yt3.googleusercontent.com/VFO3dq0dA2UC7qjyPeT8A9i-uREXjqBYRFQfV1ZBaR4AAeutLMRbco15M50b_1S1nntawcs=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
-st.image(channel_icon_url, width=150)
+st.image(channel_icon_url, width=1500)
 st.write("This is the YouTube Statistic dashboard for Emergency Awesome. ")
 st.write("A well-known YouTuber, Emergency Awesome is renowned for providing insightful evaluations and analysis of films and television series. Charlie Schneider is the channel's owner, and it has a sizable fan base thanks to its intelligent analysis, in-depth dissections, and interesting content." )
 
