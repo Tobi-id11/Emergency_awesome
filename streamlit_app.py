@@ -20,7 +20,7 @@ def get_data_from_db(query):
 
 # Page for the Streamlit app
 
-st.title("Emergency Awesome Statistics")
+st.title("Emergency Awesome Statistics Dashboard")
 channel_icon_url = "https://yt3.googleusercontent.com/VFO3dq0dA2UC7qjyPeT8A9i-uREXjqBYRFQfV1ZBaR4AAeutLMRbco15M50b_1S1nntawcs=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
 st.image(channel_icon_url, width=750)
 st.write("This is the YouTube Statistic dashboard for Emergency Awesome. ")
